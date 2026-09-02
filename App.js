@@ -42,12 +42,12 @@ export default function App() {
   return (
     <NavigationContainer>
       <StatusBar style="auto" />
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        {isFirstLaunch ? (
-          <Stack.Screen name="Welcome" component={WelcomeScreen} />
-        ) : (
-          <Stack.Screen name="MainTabs" component={MainTabs} />
-        )}
+      <Stack.Navigator
+        screenOptions={{ headerShown: false }}
+        initialRouteName={isFirstLaunch ? 'Welcome' : 'MainTabs'}
+      >
+        <Stack.Screen name="Welcome" component={WelcomeScreen} />
+        <Stack.Screen name="MainTabs" component={MainTabs} />
       </Stack.Navigator>
     </NavigationContainer>
   );

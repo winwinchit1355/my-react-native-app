@@ -7,7 +7,10 @@ export default function WelcomeScreen() {
 
   const handleGetStarted = async () => {
     await AsyncStorage.setItem('hasSeenWelcome', 'true');
-    navigation.replace('MainTabs');
+    navigation.reset({
+      index: 0,
+      routes: [{ name: 'MainTabs' }],
+    });
   };
 
   return (
